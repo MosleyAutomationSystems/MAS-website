@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosley Automation Systems — Accessibility Engineering, Grand Rapids MI</title>
+<meta name="description" content="Mosley Automation Systems builds accessible websites, remediation services, and audit tooling to the Mosley Standard — aligned with WCAG 2.1 AA.">
+<link rel="icon" type="image/png" href="assets/mas-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="Mosley Automation Systems, home">
+      <img src="assets/mas-logo.png" alt="" class="brand-mark" width="40" height="40">
+      <span class="brand-word">MOSLEY <span class="brand-word-accent">AUTOMATION SYSTEMS</span></span>
+    </a>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+      <span class="sr-only">Open menu</span>
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#standard">Standard</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="a11y-toggle" id="a11yToggle" aria-expanded="false" aria-controls="a11yPanel">
+      <span aria-hidden="true">◐</span>
+      <span>Accessibility</span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ ACCESSIBILITY PANEL ============ -->
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility settings" aria-modal="false" hidden>
+  <div class="a11y-panel-inner">
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Theme</h2>
+      <div class="a11y-btnrow" role="group" aria-label="Theme">
+        <button type="button" class="a11y-btn" data-theme="dark" aria-pressed="true">Dark</button>
+        <button type="button" class="a11y-btn" data-theme="light" aria-pressed="false">Light</button>
+        <button type="button" class="a11y-btn" data-theme="contrast" aria-pressed="false">High Contrast</button>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Text size</h2>
+      <div class="a11y-btnrow" role="group" aria-label="Text size">
+        <button type="button" class="a11y-btn" data-fontsize="normal" aria-pressed="true">A</button>
+        <button type="button" class="a11y-btn" data-fontsize="large" aria-pressed="false">A+</button>
+        <button type="button" class="a11y-btn" data-fontsize="xlarge" aria-pressed="false">A++</button>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Reading font</h2>
+      <div class="a11y-btnrow">
+        <button type="button" class="a11y-btn a11y-toggle-btn" id="dyslexiaToggle" aria-pressed="false">Reading-friendly font</button>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Word spacing</h2>
+      <div class="a11y-btnrow" role="group" aria-label="Word spacing">
+        <button type="button" class="a11y-btn" data-wordspacing="normal" aria-pressed="true">Normal</button>
+        <button type="button" class="a11y-btn" data-wordspacing="wide" aria-pressed="false">Wide</button>
+        <button type="button" class="a11y-btn" data-wordspacing="wider" aria-pressed="false">Wider</button>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Line height</h2>
+      <div class="a11y-slider-row">
+        <input type="range" id="lineHeightSlider" min="1.5" max="2.2" step="0.1" value="1.6" aria-describedby="lineHeightVal">
+        <output id="lineHeightVal" for="lineHeightSlider">1.6</output>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Letter spacing</h2>
+      <div class="a11y-slider-row">
+        <input type="range" id="letterSpacingSlider" min="0" max="0.12" step="0.01" value="0" aria-describedby="letterSpacingVal">
+        <output id="letterSpacingVal" for="letterSpacingSlider">0em</output>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Motion</h2>
+      <div class="a11y-btnrow">
+        <button type="button" class="a11y-btn a11y-toggle-btn" id="motionToggle" aria-pressed="false">Reduce motion</button>
+      </div>
+    </div>
+
+    <div class="a11y-group">
+      <h2 class="a11y-group-title">Targets</h2>
+      <div class="a11y-btnrow">
+        <button type="button" class="a11y-btn a11y-toggle-btn" id="largeTargetsToggle" aria-pressed="false">Large click targets</button>
+      </div>
+    </div>
+
+    <button type="button" class="a11y-reset" id="a11yReset">Reset all</button>
+  </div>
+  <p class="sr-only" id="a11yAnnounce" role="status" aria-live="polite"></p>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Grand Rapids, Michigan</p>
+        <h1>Systems built so <span class="hl">everyone</span> can operate them.</h1>
+        <p class="hero-lede">Mosley Automation Systems designs, audits, and repairs web interfaces against a single written engineering standard — not a checklist bolted on at the end.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">Request an audit</a>
+          <a href="#toolkit" class="btn btn-ghost">See the toolkit</a>
+        </div>
+      </div>
+    </div>
+
+    <dl class="hero-stats">
+      <div><dt>Toolkit modules built</dt><dd>76/76</dd></div>
+      <div><dt>Standard pillars</dt><dd>4</dd></div>
+      <div><dt>Standard version</dt><dd>v2.1</dd></div>
+      <div><dt>Target level</dt><dd>WCAG&#160;2.1&#160;AA</dd></div>
+    </dl>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="about">
+    <div class="section-inner about-grid">
+      <div>
+        <p class="eyebrow">Who's building this</p>
+        <h2>One engineer, one written standard.</h2>
+        <p>Mosley Automation Systems is operated by Damascus &ldquo;Bear&rdquo; Mosley, founder and lead developer, currently completing an Associate of Applied Science in Computer Information Systems at Grand Rapids Community College through the Michigan Reconnect Program. MAS LLC was approved June&#160;4,&#160;2026.</p>
+        <p>Every engagement — a one-page audit or a full rebuild — is measured against the same internal framework: the Mosley Standard. That means a client working with MAS today gets the same bar a much larger shop would hold itself to, documented in writing rather than left to memory.</p>
+      </div>
+      <div class="about-disclosure">
+        <h3>What MAS is — and isn't</h3>
+        <ul>
+          <li>MAS is <strong>not</strong> a licensed accessibility consultant or a certified third-party auditor.</li>
+          <li>Work is described as <strong>built to the Mosley Standard</strong>, which is itself aligned with WCAG&#160;2.1&#160;AA — not as formal certification.</li>
+          <li>MAS does not provide legal advice. Clients with compliance obligations should consult qualified counsel.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MOSLEY STANDARD ============ -->
+  <section id="standard" class="standard">
+    <div class="section-inner">
+      <p class="eyebrow">The framework</p>
+      <h2>The Mosley Standard — v2.1</h2>
+      <p class="section-lede">Four pillars, equal weight. A failure in one degrades the integrity of the whole. Every MAS project is checked against all four before it's called done.</p>
+
+      <div class="pillar-grid">
+        <article class="pillar-card">
+          <p class="pillar-num">Pillar&#160;I</p>
+          <h3>Infrastructure</h3>
+          <p>The foundation. Environments are reproducible from source, dependencies are pinned and explicit, and configuration lives in version control — not only in a running system.</p>
+        </article>
+        <article class="pillar-card">
+          <p class="pillar-num">Pillar&#160;II</p>
+          <h3>Operations</h3>
+          <p>The execution. Anything done more than twice is a candidate for automation, every automated action has a defined failure path, and nothing touches production without a rollback plan.</p>
+        </article>
+        <article class="pillar-card">
+          <p class="pillar-num">Pillar&#160;III</p>
+          <h3>Accessibility</h3>
+          <p>Universal access. Semantic HTML, mobile-first CSS Grid, full keyboard and screen-reader operability. Treated as an operational requirement, not a design nicety.</p>
+        </article>
+        <article class="pillar-card">
+          <p class="pillar-num">Pillar&#160;IV</p>
+          <h3>Security</h3>
+          <p>The integrity. Least privilege by default, secrets never in version control, every automated action logged. Verified against seven referenced frameworks — CERT, CWE, CVE, OWASP, DISA&#160;STIG, NVD, and CVSS.</p>
+        </article>
+      </div>
+
+      <p class="standard-note">The Mosley Standard is a personal engineering framework, not a regulatory standard or a substitute for a formal third-party audit. Passing it means a project meets MAS's own bar — a bar written down, versioned, and applied the same way to every client.</p>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="services">
+    <div class="section-inner">
+      <p class="eyebrow">Remediation services</p>
+      <h2>Four tiers, simplest to most complex.</h2>
+      <p class="section-lede">Each tier stands on its own. Each one also has a natural next step — the goal is to do the current tier well, not to upsell.</p>
+
+      <div class="tier-grid">
+        <article class="tier-card">
+          <h3>T1 — Snapshot Audit</h3>
+          <p class="tier-price">$150–$300</p>
+          <p>A 1-page, plain-language summary of your site's top risk indicators. Automated scan plus five manual checks. Delivered in 5 business days.</p>
+        </article>
+        <article class="tier-card">
+          <h3>T2 — Full Audit Report</h3>
+          <p class="tier-price">$400–$750</p>
+          <p>Every finding mapped to a WCAG criterion, classified by severity, with a remediation roadmap your developer can act on. Delivered in 10 business days.</p>
+        </article>
+        <article class="tier-card">
+          <h3>T3 — Audit + Partial Remediation</h3>
+          <p class="tier-price">$800–$1,500</p>
+          <p>For sites MAS can access directly. Full audit plus hands-on fixes for every Critical and High finding, with a re-scan confirming resolution.</p>
+        </article>
+        <article class="tier-card">
+          <h3>T4 — Retainer + Monitoring</h3>
+          <p class="tier-price">$100–$200/mo</p>
+          <p>Monthly scan, patch report, and included remediation hours. Protects a rebuild investment as content changes over time.</p>
+        </article>
+      </div>
+      <p class="services-note">Pricing reflects risk reduction and effort, not billed hours. Every engagement includes a written scope before work begins. Full site rebuilds are evaluated case by case and, where the scope is a better fit elsewhere, referred out rather than forced into a tier that doesn't serve the project.</p>
+    </div>
+  </section>
+
+  <!-- ============ TOOLKIT ============ -->
+  <section id="toolkit" class="toolkit">
+    <div class="section-inner">
+      <p class="eyebrow">In-house tooling</p>
+      <h2>MAS Accessibility Audit Toolkit</h2>
+      <p class="section-lede">A Python-built scanner MAS uses on every engagement. Ships as a free open-source Lite version anyone can pull from GitHub, plus two private paid licenses for the full build.</p>
+
+      <div class="toolkit-tiers">
+        <article class="toolkit-tier-card">
+          <p class="tier-badge tier-badge-public">Public — open source</p>
+          <h3>Lite</h3>
+          <p class="tier-price">$0</p>
+          <p>The free CLI and desktop GUI. Covers the core, highest-impact checks — enough to get a real read on a site's biggest accessibility gaps at no cost.</p>
+          <ul class="toolkit-facts">
+            <li><span class="fact-num">20</span> detection modules</li>
+            <li>CLI and desktop GUI, both free</li>
+            <li>Findings mapped to WCAG success criteria</li>
+            <li>Unlimited seats — MIT licensed</li>
+            <li>Plain-text report output only</li>
+          </ul>
+          <a href="https://github.com/MosleyAutomationSystems/MAS-audit-toolkit" class="btn btn-ghost" target="_blank" rel="noopener">View the free toolkit on GitHub</a>
+        </article>
+
+        <article class="toolkit-tier-card">
+          <p class="tier-badge tier-badge-private">Private — paid license</p>
+          <h3>Individual</h3>
+          <p class="tier-price">$129 <span class="tier-price-unit">one-time</span></p>
+          <p>The full internal build MAS runs on every client engagement. One seat, everything unlocked, no subscription.</p>
+          <ul class="toolkit-facts">
+            <li><span class="fact-num">76/76</span> detection modules — full set complete</li>
+            <li>Report export: txt, json, csv, PDF, DOCX</li>
+            <li>Per-run module selection &amp; severity filtering</li>
+            <li>Batch mode — scan a list of URLs in one command</li>
+            <li>AAA-level reporting toggle, plain-language report mode</li>
+            <li>Future modules included at no extra cost</li>
+            <li>Priority email support</li>
+          </ul>
+        </article>
+
+        <article class="toolkit-tier-card">
+          <p class="tier-badge tier-badge-private">Private — paid license</p>
+          <h3>Small Agency</h3>
+          <p class="tier-price">$259 <span class="tier-price-unit">one-time</span></p>
+          <p>Everything in Individual, licensed for a small team, plus the multi-client batch runner solo licenses don't include.</p>
+          <ul class="toolkit-facts">
+            <li><span class="fact-num">1–5</span> seats</li>
+            <li>Everything in the Individual license</li>
+            <li>Multi-client batch runner — per-client output, one consolidated summary</li>
+            <li>Priority email support</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="toolkit-disclosure">Custom report branding, saved audit profiles, and per-element finding suppression are built but sold separately as add-ons — they're not bundled into either paid license by default. Ask if one of those would help your workflow.</p>
+      <p class="toolkit-disclosure">The toolkit — any tier — surfaces an estimated 30–40% of WCAG failures automatically. It's a starting instrument for a manual review, not a substitute for one — that limitation is disclosed to every client. A browser-based subscription version is planned for later this year and isn't available yet.</p>
+
+      <div class="module-packs">
+        <h3>Only need specific checks? Buy modules à la carte</h3>
+        <p>Detection modules are grouped into packs by category — ARIA, forms, motion, navigation, and more. If the full 76-module Individual license is more than a project needs, packs let you pay for only the categories that matter for that site.</p>
+        <table class="packs-table">
+          <caption class="sr-only">Module pack pricing by category</caption>
+          <thead>
+            <tr>
+              <th scope="col">Price</th>
+              <th scope="col">Example packs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$29</td>
+              <td>Status &amp; Feedback, Accessibility Settings, Infrastructure, Media &amp; Docs</td>
+            </tr>
+            <tr>
+              <td>$39</td>
+              <td>Images &amp; Structure, Motion &amp; Media, Text &amp; Reading, Motor &amp; Touch, Navigation &amp; Focus, Customization, CVD &amp; Visual, Reporting</td>
+            </tr>
+            <tr>
+              <td>$49</td>
+              <td>Core HTML, ARIA &amp; Semantics, Forms &amp; Input, Interactive Components, Technical &amp; Security</td>
+            </tr>
+            <tr>
+              <td>$59–$69</td>
+              <td>Power User (custom rules, diff mode, remediation tracking), Advanced Analysis (screen reader simulation, full color contrast)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="toolkit-disclosure">21 packs total, each covering a specific detection category. Full catalog and current bundle pricing available on request — email for the complete list mapped to your project.</p>
+      </div>
+
+      <div class="toolkit-side">
+        <article class="side-card">
+          <h3>MAS Language Switcher</h3>
+          <p>A drop-in multilingual module — 23 languages including four right-to-left languages, theme-able via CSS custom properties, keyboard and screen-reader tested.</p>
+          <p class="side-status">v1.0.0 — shipped</p>
+          <p class="side-price">$400 base <span class="tier-price-unit">component + English + 1 language</span></p>
+          <ul class="side-price-list">
+            <li>+$75 per additional language</li>
+            <li>+$150 for Arabic or other right-to-left language</li>
+            <li>$45/hr for content updates after delivery</li>
+          </ul>
+          <p class="side-private">Private repo — built for MAS client engagements, available on request.</p>
+        </article>
+        <article class="side-card">
+          <h3>MAS Email Reporter</h3>
+          <p>Reads a completed audit report and delivers it by email automatically — one less manual step between finishing an audit and getting it in front of a client.</p>
+          <p class="side-status">Phase 2 complete</p>
+          <p class="side-price">$39 <span class="tier-price-unit">one-time add-on</span></p>
+          <p class="side-private">Requires an Individual or Small Agency toolkit license — it runs on top of the toolkit's report output, not standalone. Private repo, available on request.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section id="work" class="work">
+    <div class="section-inner">
+      <p class="eyebrow">Case study</p>
+      <h2>Glass House Bar — Grand Rapids</h2>
+      <div class="work-grid">
+        <div class="work-copy">
+          <p>A 4-page bar and restaurant site — home, hours &amp; events, menu, drinks — rebuilt from the ground up to the Mosley Standard: semantic HTML5, mobile-first layout, full keyboard and screen-reader support.</p>
+          <p>Findings from the original site were documented, the replacement was audited against the same checklist, and the client confirmed results before launch. The engagement closed as a completed, paid project — no retainer currently active; fixes are handled as requested.</p>
+        </div>
+        <dl class="work-stats">
+          <div><dt>WAVE errors, before</dt><dd>12+</dd></div>
+          <div><dt>WAVE errors, after</dt><dd>0</dd></div>
+          <div><dt>Pages rebuilt</dt><dd>4</dd></div>
+          <div><dt>Lighthouse score</dt><dd>98/100</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact">
+    <div class="section-inner contact-grid">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Tell me about the site.</h2>
+        <p>A few sentences on the site, the platform it runs on, and what's not working is enough to start. You'll get a plain-language response — no jargon, no pressure.</p>
+        <address>
+          Mosley Automation Systems<br>
+          Grand Rapids, Michigan<br>
+          <a href="mailto:mosleyautomationsystems@gmail.com">mosleyautomationsystems@gmail.com</a>
+        </address>
+      </div>
+
+      <div class="contact-howto">
+        <h3>How to reach out</h3>
+        <p>Click the button below — it opens your email app with the address already filled in. Include:</p>
+        <ul class="contact-checklist">
+          <li>Your name</li>
+          <li>The site's URL</li>
+          <li>What's not working, in plain terms</li>
+        </ul>
+        <a href="mailto:mosleyautomationsystems@gmail.com?subject=Accessibility%20inquiry" class="btn btn-primary contact-cta">Email mosleyautomationsystems@gmail.com</a>
+        <p class="contact-note">No contact form on this site right now — just a direct email, checked personally.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="section-inner footer-grid">
+    <div>
+      <div class="brand footer-brand">
+        <img src="assets/mas-logo.png" alt="" class="brand-mark" width="32" height="32">
+        <span class="brand-word">MOSLEY <span class="brand-word-accent">AUTOMATION SYSTEMS</span></span>
+      </div>
+      <p class="footer-tag">Built to the Mosley Standard. Aligned with WCAG&#160;2.1&#160;AA. Not a substitute for a formal third-party audit.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#standard">Standard</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="footer-copyright">© 2026 Mosley Automation Systems. Grand Rapids, Michigan.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
