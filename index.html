@@ -10,6 +10,60 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Mosley Automation Systems",
+  "description": "Web accessibility audits, remediation, and audit tooling built to the Mosley Standard, aligned with WCAG 2.1 AA.",
+  "url": "https://mosleyautomationsystems.github.io/MAS-website/",
+  "email": "mosleyautomationsystems@gmail.com",
+  "areaServed": {
+    "@type": "City",
+    "name": "Grand Rapids"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Grand Rapids",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Damascus Mosley"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/damascus-mosley-78b72441/",
+    "https://github.com/MosleyAutomationSystems"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Mosley Automation Systems",
+  "url": "https://mosleyautomationsystems.github.io/MAS-website/",
+  "logo": "https://mosleyautomationsystems.github.io/MAS-website/assets/mas-logo.png",
+  "description": "Web accessibility auditing and remediation built to the Mosley Standard, aligned with WCAG 2.1 AA.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Grand Rapids",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+  },
+  "areaServed": "Grand Rapids, Michigan",
+  "email": "mosleyautomationsystems@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Damascus Mosley"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/damascus-mosley-78b72441/",
+    "https://github.com/MosleyAutomationSystems"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -127,9 +181,10 @@
         <h1>Systems built so <span class="hl">everyone</span> can operate them.</h1>
         <p class="hero-lede">Mosley Automation Systems designs, audits, and repairs web interfaces against a single written engineering standard — not a checklist bolted on at the end.</p>
         <div class="hero-actions">
-          <a href="#services" class="btn btn-primary">Request an audit</a>
+          <a href="#services" class="btn btn-primary">Start with a $150 snapshot audit</a>
           <a href="#toolkit" class="btn btn-ghost">See the toolkit</a>
         </div>
+        <p class="hero-microcopy">Not sure yet? A snapshot audit is the low-commitment way to find out what's actually going on — 5 business days, no long engagement.</p>
       </div>
     </div>
 
@@ -147,8 +202,8 @@
       <div>
         <p class="eyebrow">Who's building this</p>
         <h2>One engineer, one written standard.</h2>
-        <p>Mosley Automation Systems is operated by Damascus &ldquo;Bear&rdquo; Mosley, founder and lead developer, currently completing an Associate of Applied Science in Computer Information Systems at Grand Rapids Community College through the Michigan Reconnect Program. MAS LLC was approved June&#160;4,&#160;2026.</p>
-        <p>Every engagement — a one-page audit or a full rebuild — is measured against the same internal framework: the Mosley Standard. That means a client working with MAS today gets the same bar a much larger shop would hold itself to, documented in writing rather than left to memory.</p>
+        <p>I'm Damascus — most people call me Bear. I'm a CIS student at Grand Rapids Community College, in Michigan's Reconnect program, building this company at the same time I'm still learning the field. MAS LLC was approved June&#160;4,&#160;2026. I'm not going to pretend to be a twenty-year veteran — I'm someone who cares about this problem, does the work, and writes down what I do so you're not just taking my word for it.</p>
+        <p>That's what the Mosley Standard actually is: a written framework I hold every engagement to, whether it's a one-page audit or a full rebuild. It means the bar stays the same every time — documented, not left to memory or mood.</p>
       </div>
       <div class="about-disclosure">
         <h3>What MAS is — and isn't</h3>
@@ -203,7 +258,8 @@
       <p class="section-lede">Each tier stands on its own. Each one also has a natural next step — the goal is to do the current tier well, not to upsell.</p>
 
       <div class="tier-grid">
-        <article class="tier-card">
+        <article class="tier-card tier-card-start">
+          <p class="tier-badge tier-badge-start">Start here</p>
           <h3>T1 — Snapshot Audit</h3>
           <p class="tier-price">$150–$300</p>
           <p>A 1-page, plain-language summary of your site's top risk indicators. Automated scan plus five manual checks. Delivered in 5 business days.</p>
@@ -234,6 +290,7 @@
       <p class="eyebrow">In-house tooling</p>
       <h2>MAS Accessibility Audit Toolkit</h2>
       <p class="section-lede">A Python-built scanner MAS uses on every engagement. Ships as a free open-source Lite version anyone can pull from GitHub, plus two private paid licenses for the full build.</p>
+      <p class="toolkit-selfcheck">The toolkit's own desktop GUI is built to the same standard it audits for — CVD simulation, dyslexia-friendly presets, large click targets, full keyboard and screen-reader support. It isn't just checking your site for accessibility; it's accessible itself.</p>
 
       <div class="toolkit-tiers">
         <article class="toolkit-tier-card">
@@ -315,6 +372,74 @@
           </tbody>
         </table>
         <p class="toolkit-disclosure">21 packs total, each covering a specific detection category. Full catalog and current bundle pricing available on request — email for the complete list mapped to your project.</p>
+
+        <div class="pack-example">
+          <h4>Example — ARIA &amp; Semantics pack, $49</h4>
+          <ul>
+            <li><code>aria-hidden</code> on focusable elements — flags elements hidden from assistive tech that are still reachable by keyboard</li>
+            <li><code>aria-required</code> consistency — flags mismatches between ARIA and HTML required attributes</li>
+            <li><code>aria-describedby</code> orphan check — flags references to IDs that don't exist on the page</li>
+            <li>ARIA role validity — flags invalid or deprecated role values</li>
+            <li><code>aria-live</code> region detection — flags dynamic content with no live region to announce it</li>
+            <li>ARIA attribute validity — flags attributes used on roles that don't support them</li>
+          </ul>
+          <p>Six modules, all WCAG 4.1.2, all about whether assistive tech gets accurate information about what's on the page.</p>
+        </div>
+      </div>
+
+      <div class="comparison">
+        <h3>How MAS compares</h3>
+        <p>Numbers checked directly before publishing this — not carried over from an old comparison. Two tools left off this table on purpose: their current pricing wasn't something I could verify with confidence, and a stale claim about a competitor is worse than no claim.</p>
+        <table class="comparison-table">
+          <caption class="sr-only">Feature and pricing comparison against axe DevTools Pro, WAVE, Lighthouse, and Pa11y</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tool</th>
+              <th scope="col">Price</th>
+              <th scope="col">Desktop GUI</th>
+              <th scope="col">CVD simulation</th>
+              <th scope="col">Motor / cognitive checks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">axe DevTools Pro</th>
+              <td>$40–45/mo per seat</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th scope="row">WAVE</th>
+              <td>Free</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th scope="row">Lighthouse</th>
+              <td>Free</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th scope="row">Pa11y</th>
+              <td>Free (CLI only)</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th scope="row">MAS Individual</th>
+              <td>$129 one-time</td>
+              <td>✓</td>
+              <td>✓ 4 modes</td>
+              <td>✓</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="toolkit-disclosure">Automated coverage is the honest exception, not a differentiator — independent reviews put axe's automated ceiling at roughly 30–40%, the same range MAS discloses. Neither tool replaces manual review. The real differences are what's included at the price and how the tool itself is built — the free tools above are browser add-ons or CLI-only, with no desktop app, no color-vision simulation, and nothing addressing motor or cognitive accessibility barriers.</p>
       </div>
 
       <div class="toolkit-side">
@@ -358,6 +483,55 @@
           <div><dt>Lighthouse score</dt><dd>98/100</dd></div>
         </dl>
       </div>
+
+      <div class="sample-report">
+        <p class="eyebrow">Real output, this engagement</p>
+        <div class="sample-tabs" role="tablist" aria-label="Sample audit output for glasshousegr.com">
+          <button type="button" role="tab" id="tab-before" aria-selected="true" aria-controls="panel-before" class="sample-tab">Before — original site</button>
+          <button type="button" role="tab" id="tab-after" aria-selected="false" aria-controls="panel-after" tabindex="-1" class="sample-tab">After — MAS rebuild</button>
+        </div>
+
+        <div id="panel-before" role="tabpanel" aria-labelledby="tab-before" class="sample-panel">
+          <pre class="sample-output">WAVE Accessibility Report — glasshousegr.com (original site)
+Run: February 2026
+
+  Page      Errors   Contrast Errors   Alerts
+  Home      0        7                 3
+  Menu      3        8                 5
+
+  Errors detected:
+   - 3 images on the Menu page missing alt text
+   - Heading structure skipped a level on the Menu page
+
+  Contrast errors detected:
+   - 15 text/background combinations below the 4.5:1 minimum ratio
+     across Home and Menu</pre>
+        </div>
+
+        <div id="panel-after" role="tabpanel" aria-labelledby="tab-after" class="sample-panel" hidden>
+          <pre class="sample-output">MAS Accessibility Audit Toolkit — glasshousegr.com (rebuilt site)
+
+[&gt;] REVIEW — 4 finding(s) detected
+    Mosley Risk Score : 4 — LOW
+    Minor issues only. Low risk to users.
+
+    Critical: 0   High: 0   Medium: 0   Low: 4   Info: 0
+
+[&gt;] LOW — Quality Improvements
+  [1] Accessibility Patterns — WCAG 3.2.2 (Level A)
+      &lt;a target="_blank"&gt; opens a new tab without warning.
+      text="www.glasshousegr.com"
+
+  [2] Accessibility Patterns — WCAG 3.2.2 (Level A)
+      &lt;a target="_blank"&gt; opens a new tab without warning.
+      text="IG@ glasshousegr"
+
+      ...2 more, same pattern (TikTok, Facebook links)
+
+[&gt;] No blocking issues. Review low/info findings.</pre>
+        </div>
+        <p class="sample-note">This is real toolkit output from this engagement, not a mockup. The four remaining findings are all the same low-severity pattern — social links opening new tabs without warning — left as a documented, low-risk item rather than "fixed" to force a zero.</p>
+      </div>
     </div>
   </section>
 
@@ -400,6 +574,10 @@
         <span class="brand-word">MOSLEY <span class="brand-word-accent">AUTOMATION SYSTEMS</span></span>
       </div>
       <p class="footer-tag">Built to the Mosley Standard. Aligned with WCAG&#160;2.1&#160;AA. Not a substitute for a formal third-party audit.</p>
+      <ul class="social-links" aria-label="Social links">
+        <li><a href="https://www.linkedin.com/in/damascus-mosley-78b72441/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/MosleyAutomationSystems" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </div>
     <nav aria-label="Footer">
       <ul>
