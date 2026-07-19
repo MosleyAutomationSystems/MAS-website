@@ -242,5 +242,36 @@
     });
   }
 
+  /* ---------- Sample report tabs (Before/After) ----------
+     Why: standard ARIA tabs pattern — click or Left/Right arrow to switch,
+     only the active tab is in the Tab order (roving tabindex). */
+  var sampleTabs = Array.prototype.slice.call(document.querySelectorAll(".sample-tab"));
+  if (sampleTabs.length) {
+    function activateTab(tab) {
+      sampleTabs.forEach(function (t) {
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        var isActive = t === tab;
+        t.setAttribute("aria-selected", String(isActive));
+        t.setAttribute("tabindex", isActive ? "0" : "-1");
+        if (panel) { panel.hidden = !isActive; }
+      });
+      tab.focus();
+    }
+    sampleTabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { activateTab(tab); });
+      tab.addEventListener("keydown", function (e) {
+        var nextIndex = null;
+        if (e.key === "ArrowRight") { nextIndex = (i + 1) % sampleTabs.length; }
+        else if (e.key === "ArrowLeft") { nextIndex = (i - 1 + sampleTabs.length) % sampleTabs.length; }
+        else if (e.key === "Home") { nextIndex = 0; }
+        else if (e.key === "End") { nextIndex = sampleTabs.length - 1; }
+        if (nextIndex !== null) {
+          e.preventDefault();
+          activateTab(sampleTabs[nextIndex]);
+        }
+      });
+    });
+  }
+
   applyAll();
 })();
