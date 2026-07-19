@@ -135,6 +135,10 @@ section { padding: 3.5rem 0; }
   min-height: 44px; display: flex; align-items: center;
 }
 .primary-nav a:hover { color: var(--blue); }
+.nav-social a { color: var(--cyan); }
+@media (min-width: 860px) {
+  .nav-social { margin-left: 0.5rem; padding-left: 0.5rem; border-left: 1px solid var(--line); }
+}
 .primary-nav.open { display: block; position: absolute; top: 100%; left: 0; right: 0; background: var(--panel); border-bottom: 1px solid var(--line); }
 
 @media (min-width: 860px) {
@@ -257,6 +261,7 @@ section { padding: 3.5rem 0; }
 @media (min-width: 700px) { .toolkit-side { grid-template-columns: repeat(2, 1fr); } }
 .side-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
 .side-status { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cyan); margin: 0 0 0.5rem; }
+.side-local { font-size: 0.88rem; color: var(--fog-dim); margin: 0 0 0.75rem; padding-left: 0.75rem; border-left: 2px solid var(--cyan); }
 .side-price { font-family: var(--font-mono); color: var(--blue); font-weight: 600; margin: 0 0 0.6rem; }
 .side-price-list { list-style: none; margin: 0 0 1rem; padding: 0; color: var(--fog-dim); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.3rem; }
 .side-private { font-size: 0.85rem; color: var(--fog-dim); margin: 0; }
