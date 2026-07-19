@@ -273,5 +273,20 @@
     });
   }
 
+  /* ---------- Language switcher demo dropdown ---------- */
+  var langDemoSelect = document.getElementById("langDemoSelect");
+  var langDemoOutput = document.getElementById("langDemoOutput");
+  if (langDemoSelect && langDemoOutput) {
+    langDemoSelect.addEventListener("change", function () {
+      var opt = langDemoSelect.options[langDemoSelect.selectedIndex];
+      var label = opt.getAttribute("data-label");
+      var isRtl = opt.getAttribute("data-rtl") === "true";
+      var langCode = opt.value;
+      langDemoOutput.textContent = label;
+      langDemoOutput.setAttribute("lang", langCode);
+      if (isRtl) { langDemoOutput.setAttribute("dir", "rtl"); } else { langDemoOutput.removeAttribute("dir"); }
+    });
+  }
+
   applyAll();
 })();
