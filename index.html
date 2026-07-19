@@ -307,6 +307,31 @@
             <li>Unlimited seats — MIT licensed</li>
             <li>Plain-text report output only</li>
           </ul>
+          <details class="module-disclosure">
+            <summary>See what's checked</summary>
+            <ul class="module-list">
+              <li>Alt text detection</li>
+              <li>Heading structure &amp; order</li>
+              <li>Form label association</li>
+              <li>HTML <code>lang</code> attribute</li>
+              <li>Positive tabindex misuse</li>
+              <li>Empty links</li>
+              <li>Empty buttons</li>
+              <li>Autoplay media</li>
+              <li>PDF link warnings</li>
+              <li>Page title presence</li>
+              <li>Duplicate IDs</li>
+              <li>Landmark roles</li>
+              <li>Skip navigation link</li>
+              <li>Accessibility pattern checks (generic link text, placeholder-as-label, onclick on non-interactive elements, missing table headers, unlabeled <code>target="_blank"</code>)</li>
+              <li>Platform detection — flags CMS-locked sites (Squarespace, Wix, Weebly, and similar) where fixes need the platform's own tools</li>
+              <li>Viewport meta check — flags <code>user-scalable=no</code> and blocked pinch-zoom</li>
+              <li>Touch target sizing — flags interactive elements under 44×44px on coarse-pointer devices</li>
+              <li>Table scope attributes — flags <code>&lt;th&gt;</code> elements missing <code>scope</code></li>
+              <li>Figure/figcaption check — flags figures missing captions</li>
+              <li>Animated GIF detection — flags GIFs that may flash</li>
+            </ul>
+          </details>
           <a href="https://github.com/MosleyAutomationSystems/MAS-audit-toolkit" class="btn btn-ghost" target="_blank" rel="noopener">View the free toolkit on GitHub</a>
         </article>
 
@@ -324,6 +349,7 @@
             <li>Future modules included at no extra cost</li>
             <li>Priority email support</li>
           </ul>
+          <p class="module-disclosure-note">What Lite doesn't have: full screen reader simulation (walks the DOM in tab order, catches broken accessible names and orphaned ARIA references), a complete color contrast checker against both AA and AAA thresholds, and CVD simulation across 4 vision types.</p>
         </article>
 
         <article class="toolkit-tier-card">
@@ -389,66 +415,43 @@
         </div>
       </div>
 
-      <div class="comparison">
-        <h3>How MAS compares</h3>
-        <p>Numbers checked directly before publishing this — not carried over from an old comparison. Two tools left off this table on purpose: their current pricing wasn't something I could verify with confidence, and a stale claim about a competitor is worse than no claim.</p>
-        <table class="comparison-table">
-          <caption class="sr-only">Feature and pricing comparison against axe DevTools Pro, WAVE, Lighthouse, and Pa11y</caption>
-          <thead>
-            <tr>
-              <th scope="col">Tool</th>
-              <th scope="col">Price</th>
-              <th scope="col">Desktop GUI</th>
-              <th scope="col">CVD simulation</th>
-              <th scope="col">Motor / cognitive checks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">axe DevTools Pro</th>
-              <td>$40–45/mo per seat</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <th scope="row">WAVE</th>
-              <td>Free</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <th scope="row">Lighthouse</th>
-              <td>Free</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <th scope="row">Pa11y</th>
-              <td>Free (CLI only)</td>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <th scope="row">MAS Individual</th>
-              <td>$129 one-time</td>
-              <td>✓</td>
-              <td>✓ 4 modes</td>
-              <td>✓</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="toolkit-disclosure">Automated coverage is the honest exception, not a differentiator — independent reviews put axe's automated ceiling at roughly 30–40%, the same range MAS discloses. Neither tool replaces manual review. The real differences are what's included at the price and how the tool itself is built — the free tools above are browser add-ons or CLI-only, with no desktop app, no color-vision simulation, and nothing addressing motor or cognitive accessibility barriers.</p>
-      </div>
-
       <div class="toolkit-side">
         <article class="side-card">
           <h3>MAS Language Switcher</h3>
           <p>A drop-in multilingual module — 23 languages including four right-to-left languages, theme-able via CSS custom properties, keyboard and screen-reader tested.</p>
           <p class="side-local">In the Grand Rapids area (Kent County Census data), Spanish is the most common non-English language spoken at home by a wide margin, followed by Swahili and other Central/East/Southern African languages — reflecting the region's Congolese community. All are covered; Spanish and Swahili are both included in the 23.</p>
+
+          <div class="lang-demo">
+            <label for="langDemoSelect">Try it — pick a language</label>
+            <select id="langDemoSelect">
+              <option value="en" data-label="Select language" data-rtl="false">English</option>
+              <option value="es" data-label="Seleccionar idioma" data-rtl="false">Español</option>
+              <option value="fr" data-label="Sélectionner la langue" data-rtl="false">Français</option>
+              <option value="zh" data-label="选择语言" data-rtl="false">中文</option>
+              <option value="ar" data-label="اختر اللغة" data-rtl="true">العربية</option>
+              <option value="pl" data-label="Wybierz język" data-rtl="false">Polski</option>
+              <option value="pt" data-label="Selecionar idioma" data-rtl="false">Português</option>
+              <option value="ru" data-label="Выберите язык" data-rtl="false">Русский</option>
+              <option value="de" data-label="Sprache auswählen" data-rtl="false">Deutsch</option>
+              <option value="ja" data-label="言語を選択" data-rtl="false">日本語</option>
+              <option value="ko" data-label="언어 선택" data-rtl="false">한국어</option>
+              <option value="it" data-label="Seleziona la lingua" data-rtl="false">Italiano</option>
+              <option value="hi" data-label="भाषा चुनें" data-rtl="false">हिन्दी</option>
+              <option value="nl" data-label="Taal selecteren" data-rtl="false">Nederlands</option>
+              <option value="tr" data-label="Dil seçin" data-rtl="false">Türkçe</option>
+              <option value="vi" data-label="Chọn ngôn ngữ" data-rtl="false">Tiếng Việt</option>
+              <option value="id" data-label="Pilih bahasa" data-rtl="false">Bahasa Indonesia</option>
+              <option value="th" data-label="เลือกภาษา" data-rtl="false">ภาษาไทย</option>
+              <option value="sw" data-label="Chagua lugha" data-rtl="false">Kiswahili</option>
+              <option value="tl" data-label="Pumili ng wika" data-rtl="false">Filipino</option>
+              <option value="he" data-label="בחר שפה" data-rtl="true">עברית</option>
+              <option value="ur" data-label="زبان منتخب کریں" data-rtl="true">اردو</option>
+              <option value="fa" data-label="انتخاب زبان" data-rtl="true">فارسی</option>
+            </select>
+            <p id="langDemoOutput" class="lang-demo-output" aria-live="polite">Select language</p>
+            <p class="lang-demo-note">These are the switcher's own real interface labels, not machine-translated for this demo. Selecting an Arabic, Hebrew, Urdu, or Persian option also flips the output box to <code>dir="rtl"</code> — that's the actual layout logic the component uses on a live page, not a visual trick.</p>
+          </div>
+
           <p class="side-status">v1.0.0 — shipped</p>
           <p class="side-price">$400 base <span class="tier-price-unit">component + English + 1 language</span></p>
           <ul class="side-price-list">
