@@ -310,18 +310,6 @@ section { padding: 3.5rem 0; }
 .pack-example code { font-family: var(--font-mono); font-size: 0.85em; background: var(--panel-2); padding: 0.1em 0.4em; border-radius: 4px; }
 .pack-example p:last-child { margin: 0; color: var(--fog-dim); font-size: 0.9rem; }
 
-.comparison { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
-.comparison h3 { font-size: 1.15rem; margin: 0 0 0.6rem; }
-.comparison-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
-.comparison-table th, .comparison-table td {
-  text-align: left; padding: 0.7rem 0.9rem; border: 1px solid var(--line);
-}
-.comparison-table thead th { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cyan); background: var(--panel); }
-.comparison-table tbody th { color: var(--fog); font-weight: 600; }
-.comparison-table td { color: var(--fog-dim); }
-.comparison-table tbody tr:last-child { background: var(--blue-dim); }
-.comparison-table tbody tr:last-child th, .comparison-table tbody tr:last-child td { color: #fff; }
-
 /* ============ WORK ============ */
 .work { background: var(--panel); }
 .work-grid { display: grid; gap: 2rem; margin-top: 1.5rem; }
@@ -394,9 +382,7 @@ body[data-theme="light"] .a11y-btn,
 body[data-theme="light"] .contact-howto,
 body[data-theme="light"] .packs-table th,
 body[data-theme="light"] .packs-table td,
-body[data-theme="light"] .pack-example,
-body[data-theme="light"] .comparison-table th,
-body[data-theme="light"] .comparison-table td { background: #fff; border-color: #DCD8EC; color: var(--ink); }
+body[data-theme="light"] .pack-example { background: #fff; border-color: #DCD8EC; color: var(--ink); }
 body[data-theme="light"] .hero-stats,
 body[data-theme="light"] .work-stats { background: #DCD8EC; border-color: #DCD8EC; }
 body[data-theme="light"] .hero-stats > div,
