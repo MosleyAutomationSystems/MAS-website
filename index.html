@@ -309,6 +309,32 @@
       <p class="section-lede">Built by a solo practitioner doing this work full-time, for anyone else doing it too. If you're running accessibility checks yourself — freelancer, small agency, or in-house — this replaces a stack of browser extensions with one tool: 76 WCAG-mapped checks, a real desktop GUI, and reports you can hand straight to a client. One-time price, not a per-seat subscription that creeps every year.</p>
       <p class="toolkit-selfcheck">It's also the tool this business runs on every paid engagement — so it's not a side project bolted onto a services business, it's tested against real client sites weekly. And the GUI is built to the same standard it audits for: CVD simulation, dyslexia-friendly presets, large click targets, full keyboard and screen-reader support.</p>
 
+      <div class="selfaudit">
+        <h3>Proof, not just a claim: this site audited itself</h3>
+        <p>Ran the toolkit against this exact page. Found 2 critical findings, fixed them, ran it again.</p>
+        <div class="sample-tabs" role="tablist" aria-label="Self-audit before and after">
+          <button type="button" class="sample-tab" id="selfauditTabBefore" role="tab" aria-selected="true" aria-controls="selfauditPanelBefore" tabindex="0">Before</button>
+          <button type="button" class="sample-tab" id="selfauditTabAfter" role="tab" aria-selected="false" aria-controls="selfauditPanelAfter" tabindex="-1">After</button>
+        </div>
+        <div class="sample-panel" id="selfauditPanelBefore" role="tabpanel" aria-labelledby="selfauditTabBefore">
+          <pre class="sample-output">[&gt;] Auditing: https://mosleyautomationsystems.github.io/MAS-website/
+[!] 2 finding(s) — 2 critical, 0 high, 0 medium, 0 low, 0 info
+[!] CRITICAL — Immediate Accessibility Barriers
+     These issues prevent access for users with disabilities.
+  [1] Form Labels — WCAG 1.3.1 (Level A)
+       &lt;input type="range"&gt; missing label — name="[no name]", id="lineHeightSlider"
+  [2] Form Labels — WCAG 1.3.1 (Level A)
+       &lt;input type="range"&gt; missing label — name="[no name]", id="letterSpacingSlider"
+────────────────────────────────────────
+[&gt;] Modules: 77 of 77 ran this audit.
+[&gt;] 21 finding(s) suppressed by threshold filter ('critical' and above shown).</pre>
+        </div>
+        <div class="sample-panel" id="selfauditPanelAfter" role="tabpanel" aria-labelledby="selfauditTabAfter" hidden>
+          <img src="assets/toolkit-selfaudit-after.png" alt="MAS Accessibility Audit Toolkit GUI showing a completed audit of mosleyautomationsystems.github.io with the result &quot;Audit complete. No issues found.&quot; Terminal output confirms 77 of 77 modules ran and 21 lower-severity findings were suppressed by the critical-only filter." class="selfaudit-screenshot">
+        </div>
+        <p class="toolkit-disclosure">Both range sliders had a visible heading nearby but no programmatic <code>&lt;label&gt;</code> tied to the input — invisible to screen readers even though it looked labeled on screen. Fixed by adding a proper label element to each. Same tool, same site, before and after the fix.</p>
+      </div>
+
       <div class="toolkit-tiers">
         <article class="toolkit-tier-card">
           <p class="tier-badge tier-badge-public">Public — open source</p>
