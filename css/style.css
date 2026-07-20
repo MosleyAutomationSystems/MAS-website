@@ -91,6 +91,10 @@ section { padding: 3.5rem 0; }
 .section-lede { max-width: 60ch; color: var(--fog-dim); }
 .toolkit-selfcheck { max-width: 65ch; color: var(--fog); font-size: 0.95rem; margin-top: 0.75rem; padding-left: 1rem; border-left: 2px solid var(--cyan); }
 
+.selfaudit { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.selfaudit h3 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+.selfaudit-screenshot { width: 100%; border-radius: 8px; border: 1px solid var(--line); display: block; }
+
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 44px; padding: 0.7rem 1.5rem; border-radius: 999px;
