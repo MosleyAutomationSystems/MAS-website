@@ -306,7 +306,7 @@
     <div class="section-inner">
       <p class="eyebrow">For developers &amp; freelancers</p>
       <h2>MAS Accessibility Audit Toolkit</h2>
-      <p class="section-lede">Built by a solo practitioner doing this work full-time, for anyone else doing it too. If you're running accessibility checks yourself — freelancer, small agency, or in-house — this replaces a stack of browser extensions with one tool: 76 WCAG-mapped checks, a real desktop GUI, and reports you can hand straight to a client. One-time price, not a per-seat subscription that creeps every year.</p>
+      <p class="section-lede">Built by a solo practitioner doing this work full-time, for anyone else doing it too. If you're running accessibility checks yourself — freelancer, small agency, or in-house — this replaces a stack of browser extensions with one tool: 77 WCAG-mapped checks, a real desktop GUI, and reports you can hand straight to a client. One-time price, not a per-seat subscription that creeps every year.</p>
       <p class="toolkit-selfcheck">It's also the tool this business runs on every paid engagement — so it's not a side project bolted onto a services business, it's tested against real client sites weekly. And the GUI is built to the same standard it audits for: CVD simulation, dyslexia-friendly presets, large click targets, full keyboard and screen-reader support.</p>
 
       <div class="selfaudit">
@@ -342,7 +342,7 @@
           <p class="tier-price">$0</p>
           <p>The free CLI and desktop GUI. Run it against a client site right now and see if it's worth your time — covers the core, highest-impact checks at no cost.</p>
           <ul class="toolkit-facts">
-            <li><span class="fact-num">20</span> detection modules</li>
+            <li><span class="fact-num">19</span> detection modules</li>
             <li>CLI and desktop GUI, both free</li>
             <li>Findings mapped to WCAG success criteria</li>
             <li>Unlimited seats — MIT licensed</li>
@@ -367,10 +367,9 @@
               <li>Accessibility pattern checks (generic link text, placeholder-as-label, onclick on non-interactive elements, missing table headers, unlabeled <code>target="_blank"</code>)</li>
               <li>Platform detection — flags CMS-locked sites (Squarespace, Wix, Weebly, and similar) where fixes need the platform's own tools</li>
               <li>Viewport meta check — flags <code>user-scalable=no</code> and blocked pinch-zoom</li>
-              <li>Touch target sizing — flags interactive elements under 44×44px on coarse-pointer devices</li>
-              <li>Table scope attributes — flags <code>&lt;th&gt;</code> elements missing <code>scope</code></li>
-              <li>Figure/figcaption check — flags figures missing captions</li>
-              <li>Animated GIF detection — flags GIFs that may flash</li>
+              <li>iframe title attribute check</li>
+              <li><code>aria-hidden</code> on focusable elements</li>
+              <li>ARIA role validity</li>
             </ul>
           </details>
           <a href="https://github.com/MosleyAutomationSystems/MAS-audit-toolkit" class="btn btn-ghost" target="_blank" rel="noopener">View the free toolkit on GitHub</a>
@@ -407,7 +406,7 @@
         </article>
       </div>
 
-      <p class="toolkit-disclosure">Custom report branding is built but sold separately as an add-on — not bundled into either paid license by default. Saved audit profiles and per-element finding suppression are still in development, not available yet at any price. Ask what's current if either would help your workflow.</p>
+      <p class="toolkit-disclosure">Custom report branding is built but sold separately as an add-on — not bundled into either paid license by default. Audit profiles (save named sets of enabled modules — Quick Scan, Full Audit, and similar) are included in the paid license. Per-element finding suppression is still in development, not available yet at any price. Ask what's current if it would help your workflow.</p>
       <p class="toolkit-disclosure">The toolkit — any tier — surfaces an estimated 30–40% of WCAG failures automatically. It's a starting instrument for a manual review, not a substitute for one — worth disclosing that limitation to your own clients the same way it's disclosed to MAS's. A browser-based subscription version is planned for later this year and isn't available yet.</p>
 
       <div class="module-packs">
